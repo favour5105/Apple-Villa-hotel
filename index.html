@@ -6,18 +6,21 @@
 <title>Apple Villa Hotel</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
 }
 
 body{
   background:#f5f5f5;
+  color:#333;
 }
 
 /* HEADER */
+
 header{
   background:#0d47a1;
   color:white;
@@ -26,155 +29,226 @@ header{
 }
 
 header h1{
-  font-size:32px;
+  font-size:35px;
 }
 
-/* HERO */
+header p{
+  margin-top:5px;
+}
+
+/* HERO SECTION */
+
 .hero{
-  height:80vh;
-  background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200') center/cover;
+  height:90vh;
+
+  /* BACKGROUND IMAGE */
+  background:
+  linear-gradient(rgba(0,0,0,0.5),
+  rgba(0,0,0,0.5)),
+  url("Hotel View.jpg");
+
+  background-size:cover;
+  background-position:center;
+
   display:flex;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
+  text-align:center;
   color:white;
-  text-shadow:0 0 10px black;
+  padding:20px;
+}
+
+.hero-content{
+  max-width:700px;
 }
 
 .hero h2{
-  font-size:50px;
+  font-size:55px;
+  margin-bottom:15px;
 }
 
 .hero p{
-  margin-top:10px;
-  font-size:20px;
+  font-size:22px;
 }
 
-/* BOOKING */
+/* BOOKING SECTION */
+
 .booking{
-  max-width:900px;
+  max-width:1100px;
   margin:auto;
-  margin-top:-50px;
+  margin-top:-70px;
   background:white;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.15);
 }
 
 .row{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+label{
+  font-weight:bold;
 }
 
 input,select{
   width:100%;
-  padding:12px;
+  padding:13px;
+  margin-top:5px;
   border:1px solid #ccc;
-  border-radius:5px;
+  border-radius:6px;
 }
 
 button{
   background:#0d47a1;
   color:white;
   border:none;
-  padding:14px;
+  padding:15px;
   width:100%;
-  border-radius:5px;
+  margin-top:25px;
+  border-radius:6px;
   cursor:pointer;
-  font-size:16px;
+  font-size:17px;
+  font-weight:bold;
 }
 
 button:hover{
   background:#08306b;
 }
 
+#msg{
+  margin-top:15px;
+  color:green;
+  font-weight:bold;
+}
+
 /* ROOMS */
+
 .rooms{
-  padding:50px 20px;
+  padding:70px 20px;
 }
 
 .rooms h2{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:40px;
+  font-size:38px;
 }
 
 .room-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 
 .room{
   background:white;
-  border-radius:10px;
+  border-radius:12px;
   overflow:hidden;
-  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
 .room img{
   width:100%;
-  height:200px;
+  height:230px;
   object-fit:cover;
 }
 
 .room-content{
-  padding:15px;
+  padding:20px;
+}
+
+.room-content h3{
+  margin-bottom:10px;
 }
 
 /* CONTACT */
+
 .contact{
   background:#0d47a1;
   color:white;
   text-align:center;
-  padding:40px;
+  padding:60px 20px;
+}
+
+.contact h2{
+  margin-bottom:15px;
 }
 
 .whatsapp{
   display:inline-block;
-  margin-top:15px;
+  margin-top:20px;
   background:#25D366;
   color:white;
-  padding:12px 20px;
-  border-radius:5px;
+  padding:13px 22px;
+  border-radius:6px;
   text-decoration:none;
+  font-weight:bold;
 }
 
 footer{
   background:#111;
   color:white;
   text-align:center;
-  padding:15px;
+  padding:18px;
 }
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .hero h2{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .booking{
+    margin-top:-40px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
   <h1>Apple Villa Hotel</h1>
-  <p>Luxury & Comfort</p>
+  <p>Luxury • Comfort • Relaxation</p>
 </header>
 
 <!-- HERO -->
+
 <section class="hero">
-  <h2>Book Your Stay</h2>
-  <p>Affordable luxury hotel experience</p>
+
+  <div class="hero-content">
+    <h2>Experience Luxury Living</h2>
+    <p>Book your perfect stay at Apple Villa Hotel</p>
+  </div>
+
 </section>
 
 <!-- BOOKING -->
+
 <div class="booking">
 
   <div class="row">
 
     <div>
-      <label>Name</label>
-      <input id="name" placeholder="Your Name">
+      <label>Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
     </div>
 
     <div>
-      <label>Phone</label>
-      <input id="phone" placeholder="Phone Number">
+      <label>Phone Number</label>
+      <input type="text" id="phone" placeholder="Enter phone number">
     </div>
 
     <div>
@@ -187,13 +261,16 @@ footer{
     </div>
 
     <div>
-      <label>Date</label>
-      <input type="date" id="date">
+      <label>Check-In Date</label>
+      <input type="date" id="checkin">
+    </div>
+
+    <div>
+      <label>Check-Out Date</label>
+      <input type="date" id="checkout">
     </div>
 
   </div>
-
-  <br>
 
   <button onclick="book()">Book Now</button>
 
@@ -202,56 +279,68 @@ footer{
 </div>
 
 <!-- ROOMS -->
+
 <section class="rooms">
 
-<h2>Our Rooms</h2>
+  <h2>Our Luxury Spaces</h2>
 
-<div class="room-grid">
+  <div class="room-grid">
 
-  <div class="view">
-    <img src="images/Hotel View.jpg">
-    <div class="view-content">
-      <h3>Hotel View</h3>
-      <p>Comfortable and affordable.</p>
+    <!-- DELUXE -->
+
+    <div class="room">
+      <img src="Deluxe.jpg" alt="Deluxe Room">
+
+      <div class="room-content">
+        <h3>Deluxe Room</h3>
+        <p>Luxury deluxe room with premium comfort and modern interior.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="room">
-    <img src="images/Deluxe.jpg">
-    <div class="room-content">
-      <h3>Deluxe Room</h3>
-      <p>Luxury experience with modern interior.</p>
+    <!-- LOUNGE -->
+
+    <div class="room">
+      <img src="Lounge.jpg" alt="Lounge">
+
+      <div class="room-content">
+        <h3>Executive Lounge</h3>
+        <p>Elegant and relaxing lounge designed for comfort and entertainment.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="Lounge">
-    <img src="images/Lounge">
-    <div class="lounge-content">
-      <h3>VIP Lounge</h3>
-      <p>Premium lounge for maximum comfort.</p>
+    <!-- HOTEL VIEW -->
+
+    <div class="room">
+      <img src="Hotel View.jpg" alt="Hotel View">
+
+      <div class="room-content">
+        <h3>Hotel View</h3>
+        <p>Beautiful exterior and relaxing environment of Apple Villa Hotel.</p>
+      </div>
     </div>
-  </div>
 
-</div>
+  </div>
 
 </section>
 
 <!-- CONTACT -->
+
 <section class="contact">
 
-<h2>Contact Us</h2>
+  <h2>Contact Apple Villa Hotel</h2>
 
-<p>📞 08120165105</p>
+  <p>📞 08120165105</p>
 
-<a class="whatsapp"
-href="https://wa.me/2348120165105">
-Chat on WhatsApp
-</a>
+  <a class="whatsapp"
+     href="https://wa.me/2348120165105"
+     target="_blank">
+     Chat on WhatsApp
+  </a>
 
 </section>
 
 <footer>
-© 2026 Apple Villa Hotel
+  © 2026 Apple Villa Hotel. All Rights Reserved.
 </footer>
 
 <script>
@@ -259,25 +348,38 @@ Chat on WhatsApp
 const API = "YOUR_RENDER_BACKEND_URL";
 
 // BOOK ROOM
+
 async function book(){
 
   let data = {
+
     name: document.getElementById("name").value,
+
     phone: document.getElementById("phone").value,
+
     room: document.getElementById("room").value,
-    date: document.getElementById("date").value
+
+    checkin: document.getElementById("checkin").value,
+
+    checkout: document.getElementById("checkout").value
+
   };
 
   let res = await fetch(API + "/book",{
+
     method:"POST",
+
     headers:{
       "Content-Type":"application/json"
     },
+
     body:JSON.stringify(data)
+
   });
 
   document.getElementById("msg").innerHTML =
-  "Booking Successful!";
+  "Booking Successful! We will contact you shortly.";
+
 }
 
 </script>
